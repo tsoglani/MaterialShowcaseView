@@ -280,11 +280,13 @@ public class MaterialShowcaseView extends FrameLayout implements View.OnTouchLis
         }
     }
 
-    private void setDismissText(CharSequence dismissText) {
-        if (mDismissButton != null) {
-            mDismissButton.setText(dismissText);
+    public Builder setDismissText(CharSequence dismissText) {
+            if(dismissText==null||dismissText==""){
+                showcaseView.setOnClickListener(showcaseView);
+            }else
+            showcaseView.setDismissText(dismissText);
+            return this;
         }
-    }
 
     private void setContentTextColor(int textColour) {
         if (mContentTextView != null) {
